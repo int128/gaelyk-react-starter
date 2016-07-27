@@ -36,11 +36,16 @@
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Internal URLs such as cron and task queue</web-resource-name>
+            <web-resource-name>Private URLs such as cron and task queue</web-resource-name>
             <url-pattern>/internal/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.html</location>
+    </error-page>
 </web-app>
